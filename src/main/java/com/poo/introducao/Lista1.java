@@ -41,124 +41,124 @@ public class Lista1 {
         scanner.close();
     }
 
-    public class ex3 {
-        public static void main(String[] args) {
-            Scanner scanner = new Scanner(System.in);
+    void ex3() {
 
-            double real;
-            double dolar = 5.25;
-            double valordolar;
+        Scanner scanner = new Scanner(System.in);
 
-            System.out.println("digite o valor em real: ");
-            real = scanner.nextDouble();
+        double real;
+        double dolar = 5.25;
+        double valordolar;
 
-            valordolar = real / dolar;
+        System.out.println("digite o valor em real: ");
+        real = scanner.nextDouble();
 
-            System.out.println("você recebera " + valordolar);
-        }
+        valordolar = real / dolar;
+
+        System.out.println("você recebera " + valordolar);
+        scanner.close();
+
     }
 
-    public class ex4 {
-        public static void main(String[] args) {
-            Scanner scanner = new Scanner(System.in);
+    void ex4() {
 
-            int numeroDigitado;
-            int respostaSucessor;
-            int respostaAntecessor;
+        Scanner scanner = new Scanner(System.in);
 
-            System.out.println("digite seu numero ");
-            numeroDigitado = scanner.nextInt();
+        int numeroDigitado;
+        int respostaSucessor;
+        int respostaAntecessor;
 
-            respostaAntecessor = numeroDigitado - 1;
-            respostaSucessor = numeroDigitado + 1;
+        System.out.println("digite seu numero ");
+        numeroDigitado = scanner.nextInt();
 
-            System.out.println("O antecessor é " + respostaAntecessor + " O sucessor é " + respostaSucessor);
-        }
+        respostaAntecessor = numeroDigitado - 1;
+        respostaSucessor = numeroDigitado + 1;
+
+        System.out.println("O antecessor é " + respostaAntecessor + " O sucessor é " + respostaSucessor);
+        scanner.close();
     }
 
-    public class ex5 {
-        public static void main(String[] args) {
-            Scanner scanner = new Scanner(System.in);
+    void ex5() {
 
-            double valorMetroquadrado;
-            double areaDoTerreno;
-            double valorDoTerreno;
+        Scanner scanner = new Scanner(System.in);
 
-            System.out.println("digite o valor do m²: ");
-            valorMetroquadrado = scanner.nextDouble();
+        double valorMetroquadrado;
+        double areaDoTerreno;
+        double valorDoTerreno;
 
-            System.out.println("digite a area do terreno ");
-            areaDoTerreno = scanner.nextDouble();
+        System.out.println("digite o valor do m²: ");
+        valorMetroquadrado = scanner.nextDouble();
 
-            valorDoTerreno = valorMetroquadrado * areaDoTerreno;
+        System.out.println("digite a area do terreno ");
+        areaDoTerreno = scanner.nextDouble();
 
-            System.out.println("o valor do seu terreno é de R$ " + valorDoTerreno);
-        }
+        valorDoTerreno = valorMetroquadrado * areaDoTerreno;
+
+        System.out.println("o valor do seu terreno é de R$ " + valorDoTerreno);
+        scanner.close();
+
     }
 
-    public class ex6 {
-        public static void main(String[] args) {
-            Scanner scanner = new Scanner(System.in);
+    void ex6() {
 
-            float distanciaPercorrida;
-            float QuantidadeDeCombustivelGasto;
-            float resultado;
+        Scanner scanner = new Scanner(System.in);
 
-            System.out.println("Quantos quilometros você percorreu ");
-            distanciaPercorrida = scanner.nextFloat();
+        float distanciaPercorrida;
+        float QuantidadeDeCombustivelGasto;
+        float resultado;
 
-            System.out.println("Quanto de combustivel você gastou: ");
-            QuantidadeDeCombustivelGasto = scanner.nextFloat();
+        System.out.println("Quantos quilometros você percorreu ");
+        distanciaPercorrida = scanner.nextFloat();
 
-            resultado = distanciaPercorrida / QuantidadeDeCombustivelGasto;
+        System.out.println("Quanto de combustivel você gastou: ");
+        QuantidadeDeCombustivelGasto = scanner.nextFloat();
 
-            System.out.println("Seu carro esta consumindo KM/L " + resultado);
-        }
+        resultado = distanciaPercorrida / QuantidadeDeCombustivelGasto;
+
+        System.out.println("Seu carro esta consumindo KM/L " + resultado);
+        scanner.close();
+
     }
 
-    public class ex7 {
-        public static void main(String[] args) {
-            Scanner scanner = new Scanner(System.in);
+    void ex7() {
 
-            float nota1;
-            float nota2;
-            float nota3;
-            float nota4;
-            float resultado;
+        Scanner scanner = new Scanner(System.in);
 
-            System.out.println("digite a primeira nota: ");
-            nota1 = scanner.nextFloat();
+        float nota1;
+        float nota2;
+        float nota3;
+        float nota4;
+        float resultado;
 
-            System.out.println("digite a segunta nota: ");
-            nota2 = scanner.nextFloat();
+        System.out.println("digite a primeira nota: ");
+        nota1 = scanner.nextFloat();
 
-            System.out.println("digite a terceira nota: ");
-            nota3 = scanner.nextFloat();
+        System.out.println("digite a segunta nota: ");
+        nota2 = scanner.nextFloat();
 
-            System.out.println("digite a quarta nota: ");
-            nota4 = scanner.nextFloat();
+        System.out.println("digite a terceira nota: ");
+        nota3 = scanner.nextFloat();
 
-            resultado = (nota1 + nota2 + nota3 + nota4) / 4;
+        System.out.println("digite a quarta nota: ");
+        nota4 = scanner.nextFloat();
 
-            System.out.println("Sua media é " + resultado);
+        resultado = (nota1 + nota2 + nota3 + nota4) / 4;
 
-        }
+        System.out.println("Sua media é " + resultado);
+        scanner.close();
     }
 
-    public class ex8 {
-        public static void main(String[] args) {
-            Scanner scanner = new Scanner(System.in);
+    void ex8() {
 
-            float fahrenheit;
-            float resultado;
+        Scanner scanner = new Scanner(System.in);
 
-            System.out.println("digite a temperatura em fahrenheit: ");
-            fahrenheit = scanner.nextFloat();
+        float fahrenheit;
+        float resultado;
 
-            resultado = (fahrenheit - 32) * 5 / 9;
+        System.out.println("digite a temperatura em fahrenheit: ");
+        fahrenheit = scanner.nextFloat();
 
-            System.out.println("o valor em graus celsios é de: " + resultado);
-        }
+        resultado = (fahrenheit - 32) * 5 / 9;
+
+        System.out.println("o valor em graus celsios é de: " + resultado);
     }
-
 }
