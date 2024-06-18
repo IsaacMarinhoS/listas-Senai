@@ -123,11 +123,11 @@ public class Lista1 {
 
         Scanner scanner = new Scanner(System.in);
 
-        float nota1;
-        float nota2;
-        float nota3;
-        float nota4;
-        float resultado;
+        double nota1;
+        double nota2;
+        double nota3;
+        double nota4;
+        double resultado;
 
         System.out.println("digite a primeira nota: ");
         nota1 = scanner.nextFloat();
@@ -151,8 +151,8 @@ public class Lista1 {
 
         Scanner scanner = new Scanner(System.in);
 
-        float fahrenheit;
-        float resultado;
+        double fahrenheit;
+        double resultado;
 
         System.out.println("digite a temperatura em fahrenheit: ");
         fahrenheit = scanner.nextFloat();
@@ -160,5 +160,6 @@ public class Lista1 {
         resultado = (fahrenheit - 32) * 5 / 9;
 
         System.out.println("o valor em graus celsios é de: " + resultado);
+        scanner.close();
     }
 }
