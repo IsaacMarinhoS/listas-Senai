@@ -161,4 +161,73 @@ public class Lista2 {
         }
 
     }
+
+    void ex7() {
+
+        Scanner scanner = new Scanner(System.in);
+
+        int numero1;
+        int numero2;
+
+        System.out.print("Informe o numero a ser divididido: ");
+        numero1 = scanner.nextInt();
+
+        System.out.print("Informe o divisor 'SEM SER 0': ");
+        numero2 = scanner.nextInt();
+
+        if (numero1 == 0) {
+            System.out.print("O numero " + numero2 + " é 0");
+        } else if (numero1 % numero2 == 0) {
+            System.out.print("O numero " + numero1 + " é divisivel por " + numero2);
+        } else {
+            System.out.print("O numero " + numero1 + " não é divisivel por " + numero2);
+        }
+
+    }
+
+    void ex8() {
+        Scanner scanner = new Scanner(System.in);
+
+        String[][] perguntas = {
+                { "Qual é a capital do Brasil?", "A) Brasília", "B) Rio de Janeiro", "C) São Paulo", "D) Salvador",
+                        "A" },
+                { "Quem pintou a Mona Lisa?", "A) Vincent van Gogh", "B) Pablo Picasso", "C) Leonardo da Vinci",
+                        "D) Michelangelo", "C" },
+                { "Qual é o elemento químico representado pelo símbolo 'O'?", "A) Ouro", "B) Oxigênio", "C) Osmium",
+                        "D) Oxalato", "B" },
+                { "Quantos continentes existem na Terra?", "A) 5", "B) 6", "C) 7", "D) 8", "C" },
+                { "Qual é o maior oceano da Terra?", "A) Oceano Atlântico", "B) Oceano Índico", "C) Oceano Ártico",
+                        "D) Oceano Pacífico", "D" }
+        };
+
+        int acertos = 0;
+        int erros = 0;
+
+        for (int i = 0; i < perguntas.length; i++) {
+            System.out.println(perguntas[i][0]);
+            System.out.println(perguntas[i][1]);
+            System.out.println(perguntas[i][2]);
+            System.out.println(perguntas[i][3]);
+            System.out.println(perguntas[i][4]);
+            System.out.print("Sua resposta: ");
+            String resposta = scanner.next().toUpperCase();
+
+            if (resposta.equals(perguntas[i][5])) {
+                acertos++;
+                System.out.println("Resposta correta!\n");
+            } else {
+                erros++;
+                System.out.println("Resposta errada!\n");
+
+                if (erros == 3) {
+                    System.out.println("Você errou 3 vezes. Você perdeu o jogo!");
+                    break;
+                }
+            }
+        }
+
+        if (erros < 3) {
+            System.out.println("Parabéns! Você completou o jogo com " + acertos + " acertos.");
+        }
+    }
 }
