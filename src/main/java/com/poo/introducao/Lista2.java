@@ -94,12 +94,71 @@ public class Lista2 {
             System.out.print("Você pode entrar somente acompanhado!");
         } else {
             System.out.print("Você esta liberado!");
+
+        }
+    }
+
+    void ex5() {
+
+        Scanner scanner = new Scanner(System.in);
+
+        String login = "isaacAbc";
+        String senha = "isaac2929";
+        String loginDigitado;
+        String senhaDigitada;
+
+        System.out.print("Digite seu login: ");
+        loginDigitado = scanner.nextLine();
+
+        System.out.print("Digite sua senha: ");
+        senhaDigitada = scanner.nextLine();
+
+        if (loginDigitado.equals(login) && senhaDigitada.equals(senha)) {
+            System.out.print("Login e senha corretos.");
+        } else if (!loginDigitado.equals(login)) {
+            System.out.print("Login ou senha incorreta.");
+        } else if (!senhaDigitada.equals(senha)) {
+            System.out.print("Login ou senha incorreta.");
+
+        }
+    }
+
+    void ex6() {
+
+        Scanner scanner = new Scanner(System.in);
+
+        double nota1;
+        double nota2;
+        double media;
+        double recuperacao;
+
+        System.out.print("digite a primeira nota: ");
+        nota1 = scanner.nextDouble();
+
+        System.out.print("digite a segunda nota: ");
+        nota2 = scanner.nextDouble();
+
+        media = (nota1 + nota2) / 2;
+
+        if (media >= 6) {
+            System.out.print("Você passou com a media: "+media );
+        } else {
+            System.out.print("Você esta de recuperação. Digite a nota de recuperação: ");
+            recuperacao = scanner.nextDouble();
+            if (nota1 < nota2) {
+                nota1 = recuperacao;
+
+            } else {
+                nota2 = recuperacao;
+            }
+            media = (nota1 + nota2) / 2;
+            if (media >= 6) {
+                System.out.print("Você passou com a media: "+media);
+            } else {
+                System.out.print("Você esta reprovado!");
+
+            }
         }
 
     }
-
-    
-
-
-
 }
