@@ -11,7 +11,7 @@ public class Lista3 {
 
         int segundos;
 
-        System.out.print("Digite um número de segundos 'entre 1 e 59': ");
+        System.out.print("Digite um número 'entre 1 e 59': ");
         segundos = scanner.nextInt();
 
         System.out.println("Contagem regressiva iniciada:");
@@ -123,10 +123,10 @@ public class Lista3 {
 
         String loginCorreto = "isaac";
         String senhaCorreta = "isaac123";
-        int tentativas = 0;
+        int tentativas = 3;
         boolean acessoNegado = false;
 
-        while (tentativas <= 2) {
+        while (tentativas > 0) {
 
             System.out.print("Digite o login: ");
             String login = scanner.nextLine();
@@ -138,27 +138,38 @@ public class Lista3 {
                 break;
             } else {
 
-                tentativas++;
+                tentativas--;
 
-                if (tentativas <= 1) {
-                    System.out.println("Login ou senha incorretos. Tente novamente.");
-                    System.out.println("Tentativas restantes: " + (3 - tentativas));
-                } else {
+                if (!login.equals(loginCorreto) && (tentativas > 0)) {
+                    System.out.println("Login incorreto. Tente novamente.");
+
+                    if (!senha.equals(senhaCorreta) && (tentativas > 0)) {
+                        System.out.println("senha incorreta. Tente novamente.");
+
+                    }
+                    System.out.println("Tentativas restantes: " + (tentativas));
+                } else if (!senha.equals(senhaCorreta) && (tentativas > 0)) {
+                    System.out.println("senha incorreta. Tente novamente.");
+                    System.out.println("Tentativas restantes: " + (tentativas));
+                } if (tentativas == 1) {
                     System.out.println("Última tentativa, mais um erro e seu acesso será bloqueado!");
                 }
             }
         }
 
-        if (tentativas >= 2) {
+        if (tentativas == 0) {
             System.out.println("Número máximo de tentativas alcançado. Seu acesso foi bloqueado.");
             acessoNegado = true;
         }
     }
 
     void ex6() {
+        Scanner scanner = new Scanner(System.in);
+    }
+
+    void ex7() {
 
         Scanner scanner = new Scanner(System.in);
-
     }
 
 }
