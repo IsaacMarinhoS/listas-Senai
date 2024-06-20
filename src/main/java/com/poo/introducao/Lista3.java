@@ -5,7 +5,31 @@ import java.util.Random;
 
 public class Lista3 {
 
+    void ex1() {
+
+        Scanner scanner = new Scanner(System.in);
+
+        int segundos;
+
+        System.out.print("Digite um número de segundos 'entre 1 e 59': ");
+        segundos = scanner.nextInt();
+
+        System.out.println("Contagem regressiva iniciada:");
+
+        while (segundos > 0) {
+            System.out.println(segundos);
+            segundos--;
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
+    }
+
     void ex2() {
+
         Scanner scanner = new Scanner(System.in);
 
         int numero;
@@ -21,6 +45,7 @@ public class Lista3 {
     }
 
     void ex3() {
+
         Scanner scanner = new Scanner(System.in);
 
         int numero1;
@@ -91,4 +116,49 @@ public class Lista3 {
         }
 
     }
+
+    void ex5() {
+
+        Scanner scanner = new Scanner(System.in);
+
+        String loginCorreto = "isaac";
+        String senhaCorreta = "isaac123";
+        int tentativas = 0;
+        boolean acessoNegado = false;
+
+        while (tentativas <= 2) {
+
+            System.out.print("Digite o login: ");
+            String login = scanner.nextLine();
+            System.out.print("Digite a senha: ");
+            String senha = scanner.nextLine();
+
+            if (login.equals(loginCorreto) && senha.equals(senhaCorreta)) {
+                System.out.println("Login realizado com sucesso!");
+                break;
+            } else {
+
+                tentativas++;
+
+                if (tentativas <= 1) {
+                    System.out.println("Login ou senha incorretos. Tente novamente.");
+                    System.out.println("Tentativas restantes: " + (3 - tentativas));
+                } else {
+                    System.out.println("Última tentativa, mais um erro e seu acesso será bloqueado!");
+                }
+            }
+        }
+
+        if (tentativas >= 2) {
+            System.out.println("Número máximo de tentativas alcançado. Seu acesso foi bloqueado.");
+            acessoNegado = true;
+        }
+    }
+
+    void ex6() {
+
+        Scanner scanner = new Scanner(System.in);
+
+    }
+
 }
