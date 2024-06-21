@@ -151,7 +151,8 @@ public class Lista3 {
                 } else if (!senha.equals(senhaCorreta) && (tentativas > 0)) {
                     System.out.println("senha incorreta. Tente novamente.");
                     System.out.println("Tentativas restantes: " + (tentativas));
-                } if (tentativas == 1) {
+                }
+                if (tentativas == 1) {
                     System.out.println("Última tentativa, mais um erro e seu acesso será bloqueado!");
                 }
             }
@@ -165,11 +166,44 @@ public class Lista3 {
 
     void ex6() {
         Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite o número de andares da pirâmide: ");
+        int andares = scanner.nextInt();
+
+        for (int i = 1; i <= andares; i++) {
+
+            for (int j = andares - i; j > 0; j--) {
+                System.out.print(" ");
+            }
+
+            for (int k = 1; k <= (2 * i - 1); k++) {
+                System.out.print("*");
+            }
+
+            System.out.println();
+        }
+
     }
 
     void ex7() {
 
         Scanner scanner = new Scanner(System.in);
+        System.out.print("Digite a largura do retângulo: ");
+        int largura = scanner.nextInt();
+        
+        System.out.print("Digite a altura do retângulo: ");
+        int altura = scanner.nextInt();
+        
+        for (int i = 0; i < altura; i++) {
+            for (int j = 0; j < largura; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        
+        scanner.close();
     }
-
 }
+
+    
+
