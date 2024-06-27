@@ -10,6 +10,6 @@ public class IntroducaoApplication {
 		SpringApplication.run(IntroducaoApplication.class, args);
 
 		Lista4 lista = new Lista4();
-		lista.ex4();
+		lista.ex8();
 	}
 }
