@@ -230,115 +230,83 @@ public class Lista4 {
 
     }
 
-    void ex8() {
+    void ex8(){
+        ArrayList<String> listaDeCompras = new ArrayList<>();
+        ArrayList<Double> listaDePrecos = new ArrayList<>();
+        Scanner scanner = new Scanner(System.in);
+        int opcao = 0;
 
-        class Item {
-            String nome;
-            double preco;
+        do {
+            System.out.println("1. Inserir item");
+            System.out.println("2. Ver lista");
+            System.out.println("3. Remover item");
+            System.out.println("4. Ordenar em ordem crescente");
+            System.out.println("Escolha uma opção: ");
+            opcao = scanner.nextInt();
+            scanner.nextLine();
 
-            Item(String nome, double preco) {
-                this.nome = nome;
-                this.preco = preco;
-            }
-
-            ArrayList<Item> listaDeCompras = new ArrayList<>();
-
-            public static void main(String[] args) {
-                Scanner scanner = new Scanner(System.in);
-                while (true) {
-                    mostrarMenu();
-                    int opcao = scanner.nextInt();
-                    scanner.nextLine(); // Consumir a nova linha
-
-                    switch (opcao) {
-                        case 1:
-                            adicionarItem(scanner);
-                            break;
-                        case 2:
-                            verLista();
-                            break;
-                        case 3:
-                            removerItem(scanner);
-                            break;
-                        case 4:
-                            verListaOrdenada();
-                            break;
-                        case 5:
-                            System.out.println("Saindo...");
-                            scanner.close();
-                            return;
-                        default:
-                            System.out.println("Opção inválida. Tente novamente.");
-                    }
-                }
-            }
-
-            void mostrarMenu() {
-                System.out.println("\nMenu:");
-                System.out.println("1. Adicionar item");
-                System.out.println("2. Ver lista de compras");
-                System.out.println("3. Remover item");
-                System.out.println("4. Ver lista ordenada por preço (crescente)");
-                System.out.println("5. Sair");
-                System.out.print("Escolha uma opção: ");
-            }
-
-            void adicionarItem(Scanner scanner) {
-                System.out.print("Digite o nome do item: ");
-                String nome = scanner.nextLine();
-                System.out.print("Digite o preço do item: ");
-                double preco = scanner.nextDouble();
-                scanner.nextLine(); // Consumir a nova linha
-
-                listaDeCompras.add(new Item(nome, preco));
-                System.out.println("Item '" + nome + "' adicionado com sucesso!");
-            }
-
-            void verLista() {
-                if (listaDeCompras.isEmpty()) {
-                    System.out.println("A lista de compras está vazia.");
-                } else {
+            switch (opcao) {
+                case 1:
+                    System.out.print("Digite o nome do item: ");
+                    String item = scanner.nextLine();
+                    System.out.print("Digite o preço do item: ");
+                    double preco = scanner.nextDouble();
+                    scanner.nextLine();
+                    listaDeCompras.add(item);
+                    listaDePrecos.add(preco);
+                    System.out.println("Item e preço adicionados!\n");
+                    break;
+                case 2:
+                    System.out.println("Lista de Compras:");
                     for (int i = 0; i < listaDeCompras.size(); i++) {
-                        Item item = listaDeCompras.get(i);
-                        System.out.printf("%d. %s - R$ %.2f%n", i + 1, item.nome, item.preco);
+                        System.out.printf("%d. %s - R$ %.2f%n", (i + 1), listaDeCompras.get(i), listaDePrecos.get(i));
                     }
-                }
-            }
-
-            void removerItem(Scanner scanner) {
-                verLista();
-                if (listaDeCompras.isEmpty()) {
-                    return;
-                }
-                System.out.print("Digite o número do item a ser removido: ");
-                try {
-                    int itemNum = scanner.nextInt();
-                    scanner.nextLine(); // Consumir a nova linha
-                    if (itemNum > 0 && itemNum <= listaDeCompras.size()) {
-                        Item removido = listaDeCompras.remove(itemNum - 1);
-                        System.out.println("Item '" + removido.nome + "' removido com sucesso!");
+                    System.out.println();
+                    break;
+                case 3:
+                    System.out.println("Lista de Compras:");
+                    for (int i = 0; i < listaDeCompras.size(); i++) {
+                        System.out.printf("%d. %s - R$ %.2f%n", (i + 1), listaDeCompras.get(i), listaDePrecos.get(i));
+                    }
+                    System.out.print("Digite o número do item a ser removido: ");
+                    int numeroItem = scanner.nextInt();
+                    if (numeroItem > 0 && numeroItem <= listaDeCompras.size()) {
+                        listaDeCompras.remove(numeroItem - 1);
+                        listaDePrecos.remove(numeroItem - 1);
+                        System.out.println("Item removido!\n");
                     } else {
-                        System.out.println("Número inválido.");
+                        System.out.println("Número inválido!\n");
                     }
-                } catch (Exception e) {
-                    System.out.println("Entrada inválida. Por favor, digite um número.");
-                    scanner.nextLine(); // Limpar entrada inválida
-                }
+                    break;
+                    case 4:
+                    if (listaDeCompras.size() > 1) {
+                        // Implementação da ordenação por seleção
+                        for (int i = 0; i < listaDePrecos.size() - 1; i++) {
+                            int minIndex = i;
+                            for (int j = i + 1; j < listaDePrecos.size(); j++) {
+                                if (listaDePrecos.get(j) < listaDePrecos.get(minIndex)) {
+                                    minIndex = j;
+                                }
+                            }
+                            // Troca os elementos de posição
+                            Collections.swap(listaDePrecos, i, minIndex);
+                            Collections.swap(listaDeCompras, i, minIndex);
+                        }
+                        System.out.println("Lista de Compras ordenada por preço crescente:");
+                        for (int i = 0; i < listaDeCompras.size(); i++) {
+                            System.out.printf("%d. %s - R$ %.2f%n", (i + 1), listaDeCompras.get(i), listaDePrecos.get(i));
+                        }
+                    } else {
+                        System.out.println("Não há itens suficientes para ordenar.\n");
+                    }
+                    break;
+                case 5:
+                    System.out.println("Saindo...");
+                    break;
+                default:
+                    System.out.println("Opção inválida, tente novamente.\n");
             }
 
-            void verListaOrdenada() {
-                if (listaDeCompras.isEmpty()) {
-                    System.out.println("A lista de compras está vazia.");
-                } else {
-                    ArrayList<Item> listaOrdenada = new ArrayList<>(listaDeCompras);
-                    Collections.sort(listaOrdenada, Comparator.comparingDouble(item -> item.preco));
-                    for (int i = 0; i < listaOrdenada.size(); i++) {
-                        Item item = listaOrdenada.get(i);
-                        System.out.printf("%d. %s - R$ %.2f%n", i + 1, item.nome, item.preco);
-                    }
-                }
-            }
-        }
-
+        }while (opcao != 5);
     }
 }
